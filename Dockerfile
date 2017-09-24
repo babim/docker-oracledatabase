@@ -8,8 +8,8 @@ MAINTAINER babim <babim@matmagoc.com>
 # -------------------------------------------------------------
 ENV ORACLE_BASE=/opt/oracle \
     ORACLE_HOME=/opt/oracle/product/12.1.0.2/dbhome_1 \
-    INSTALL_FILE_1="linuxamd64_12c_database_1of2.zip" \
-    INSTALL_FILE_2="linuxamd64_12c_database_2of2.zip" \
+    INSTALL_FILE_1="linuxamd64_12102_database_1of2.zip" \
+    INSTALL_FILE_2="linuxamd64_12102_database_2of2.zip" \
     INSTALL_RSP="db_inst.rsp" \
     CONFIG_RSP="dbca.rsp.tmpl" \
     PWD_FILE="setPassword.sh" \
