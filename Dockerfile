@@ -25,7 +25,7 @@ COPY $INSTALL_FILE_1 $CONFIG_RSP $RUN_FILE $PWD_FILE $INSTALL_DIR/
 # Install Oracle Express Edition
 # ------------------------------
 
-RUN RUN yum install wget -y && cd $INSTALL_DIR/ && \
+RUN yum install wget -y && cd $INSTALL_DIR/ && \
     wget http://media.matmagoc.com/oracle/$INSTALL_FILE_1 && \
     yum -y install unzip libaio bc initscripts net-tools openssl && \
     yum clean all && \
