@@ -9,6 +9,12 @@ Sample Docker build files to facilitate installation, configuration, and environ
 	DATABASE IS READY TO USE!
 	#########################
 
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:11xe "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own version badge on microbadger.com")
+
 You may extend the image with your own Dockerfile and create the users and tablespaces that you may need.
 
 The character set for the database is set during creating of the database. 11g Express Edition supports only UTF-8. You can set the character set for the Standard Edition 2 and Enterprise Edition during the first run of your container and may keep separate folders containing different tablespaces with different character sets.
