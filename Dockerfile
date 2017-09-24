@@ -32,7 +32,7 @@ ENV INSTALL_DIR=$ORACLE_BASE/install \
 COPY $INSTALL_RSP $SETUP_LINUX_FILE $CHECK_SPACE_FILE $INSTALL_DB_BINARIES_FILE $INSTALL_DIR/
 COPY $RUN_FILE $START_FILE $CREATE_DB_FILE $CONFIG_RSP $PWD_FILE $CHECK_DB_FILE $USER_SCRIPTS_FILE $ORACLE_BASE/
 
-RUN RUN yum install wget -y && cd $INSTALL_DIR/ && \
+RUN yum install wget -y && cd $INSTALL_DIR/ && \
     wget http://media.matmagoc.com/oracle/$INSTALL_FILE_1 && \
     chmod ug+x $INSTALL_DIR/*.sh && \
     sync && \
