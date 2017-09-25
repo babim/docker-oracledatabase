@@ -34,7 +34,7 @@ docker build -t oracle/instantclient:12.2.0.1 .
 You can run a container interactively to execute ad-hoc SQL and PL/SQL statements in SQL*Plus:
 
 ```
-docker run -ti --rm oracle/instantclient:12.2.0.1 sqlplus hr/welcome@example.com/pdborcl
+docker run -ti --rm babim/oracledatabase:client sqlplus hr/welcome@example.com/pdborcl
 ```
 
 ## Adding Oracle Database Drivers
