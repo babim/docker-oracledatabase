@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/sh
 
 #Delete limits cause of docker limits issue
 cat /etc/security/limits.conf | grep -v oracle | tee /etc/security/limits.conf
