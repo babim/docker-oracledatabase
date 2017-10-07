@@ -20,7 +20,7 @@ ENV PATH=$ORACLE_HOME/bin:$PATH
 
 # Copy binaries
 # -------------
-COPY $INSTALL_FILE_1 $CONFIG_RSP $RUN_FILE $PWD_FILE $INSTALL_DIR/
+COPY $CONFIG_RSP $RUN_FILE $PWD_FILE $INSTALL_DIR/
 
 # Install Oracle Express Edition
 # ------------------------------
