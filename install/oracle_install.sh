@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 #Delete limits cause of docker limits issue
