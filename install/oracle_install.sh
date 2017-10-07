@@ -1,12 +1,14 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 #Delete limits cause of docker limits issue
 cat /etc/security/limits.conf | grep -v oracle | tee /etc/security/limits.conf
 
 echo 'Downloading linux.x64_11gR2_database_1of2.zip'
-wget -q -O linux.x64_11gR2_database_1of2.zip http://media.matmagoc.com/oracle/linux.x64_11gR2_database_1of2.zip
+#wget -q -O linux.x64_11gR2_database_1of2.zip http://media.matmagoc.com/oracle/linux.x64_11gR2_database_1of2.zip
 echo 'Downloading linux.x64_11gR2_database_2of2.zip'
-wget -q -O linux.x64_11gR2_database_2of2.zip http://media.matmagoc.com/oracle/linux.x64_11gR2_database_2of2.zip
+#wget -q -O linux.x64_11gR2_database_2of2.zip http://media.matmagoc.com/oracle/linux.x64_11gR2_database_2of2.zip
 echo 'Unzipping'
 unzip -q linux.x64_11gR2_database_1of2.zip
 unzip -q linux.x64_11gR2_database_2of2.zip
