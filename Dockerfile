@@ -22,6 +22,12 @@ ENV ORACLE_SID=EE
 ENV ORACLE_HOME=/u01/app/oracle/product/11.2.0/EE
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/u01/app/oracle/product/11.2.0/EE/bin
 
+RUN cat /etc/security/limits.conf | grep -v oracle | tee /etc/security/limits.conf && \
+    cd /root && echo 'Unzipping' && unzip -q p13390677_112040_Linux-x86-64_1of7.zip && \
+    unzip -q p13390677_112040_Linux-x86-64_2of7.zip && rm -f p13390677_112040*.zip && mv database /home/oracle/ && \
+    su oracle -c 'cd /home/oracle/database && ./runInstaller -ignorePrereq -ignoreSysPrereqs -silent -responseFile /install/oracle-11g-ee.rsp -waitForCompletion 2>&1' && \
+    rm -rf /home/oracle/database && mv /u01/app/oracle/product /u01/app/oracle-product
+    
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
