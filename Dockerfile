@@ -6,8 +6,8 @@ MAINTAINER babim <babim@matmagoc.com>
 RUN groupadd dba && useradd -m -G dba oracle && mkdir /u01 && chown oracle:dba /u01
 RUN yum install -y yum install oracle-rdbms-server-11gR2-preinstall glibc-static wget unzip && yum clean all
 
-#ADD linux.x64_11gR2_database_1of2.zip /
-#ADD linux.x64_11gR2_database_2of2.zip /
+#ADD p13390677_112040_Linux-x86-64_1of7.zip /
+#ADD p13390677_112040_Linux-x86-64_2of7.zip /
 
 ADD install /install
 
