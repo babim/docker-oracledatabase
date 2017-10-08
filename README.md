@@ -3,21 +3,23 @@ Oracle Enterprise Edition 11g Release 2
 
 Oracle Enterprise Edition 11g Release 2 on Oracle Linux
 
+#Error: Create database stop at 76%
+
 ### Installation
 
-    docker pull babim/oracledatabase:11.2.0.1
+    docker pull babim/oracledatabase:11.2.0.4
 
 Run with 8080 and 1521 ports opened:
 
-    docker run -d -p 8080:8080 -p 1521:1521 babim/oracledatabase:11.2.0.1
+    docker run -d -p 8080:8080 -p 1521:1521 babim/oracledatabase:11.2.0.4
 
 Run with data on host and reuse it:
 
-    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle babim/oracledatabase:11.2.0.1
+    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle babim/oracledatabase:11.2.0.4
 
 Run with Custom DBCA_TOTAL_MEMORY (in Mb):
 
-    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle -e DBCA_TOTAL_MEMORY=1024 babim/oracledatabase:11.2.0.1
+    docker run -d -p 8080:8080 -p 1521:1521 -v /my/oracle/data:/u01/app/oracle -e DBCA_TOTAL_MEMORY=1024 babim/oracledatabase:11.2.0.4
 
 Connect database with following setting:
 
@@ -52,7 +54,7 @@ Connect to Oracle Enterprise Management console with following settings:
 
 By Default web management console is enabled. To disable add env variable:
 
-    docker run -d -e WEB_CONSOLE=false -p 1521:1521 -v /my/oracle/data:/u01/app/oracle babim/oracledatabase:11.2.0.1
+    docker run -d -e WEB_CONSOLE=false -p 1521:1521 -v /my/oracle/data:/u01/app/oracle babim/oracledatabase:11.2.0.4
     #You can Enable/Disable it on any time
 
 Start with additional init scripts or dumps:
