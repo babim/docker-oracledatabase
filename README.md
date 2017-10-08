@@ -3,7 +3,7 @@ Oracle Enterprise Edition 11g Release 2
 
 Oracle Enterprise Edition 11g Release 2 on Oracle Linux
 
-#Error: Create database stop at 76%
+# Error: Create database stop at 76%
 
 ### Installation
 
