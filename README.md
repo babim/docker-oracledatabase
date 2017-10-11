@@ -8,6 +8,8 @@ Oracle Database on Docker
 
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own version badge on microbadger.com")
 
+[![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.3.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.3 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.3.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.3 "Get your own version badge on microbadger.com")
+
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.4.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.4 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.4.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.4 "Get your own version badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:11xe "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:11xe "Get your own version badge on microbadger.com")
@@ -22,16 +24,6 @@ Sample Docker build files to facilitate installation, configuration, and environ
 	#########################
 	DATABASE IS READY TO USE!
 	#########################
-
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:11xe "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11xe.svg)](https://microbadger.com/images/babim/oracledatabase:11xe "Get your own version badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own version badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own version badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own version badge on microbadger.com")
 
 You may extend the image with your own Dockerfile and create the users and tablespaces that you may need.
 
