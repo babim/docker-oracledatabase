@@ -39,6 +39,16 @@ RUN yum install wget -y && cd $INSTALL_DIR/ && \
     $INSTALL_DIR/$CHECK_SPACE_FILE && \
     $INSTALL_DIR/$SETUP_LINUX_FILE
 
+# install SSH
+RUN yum install -y openssh-server && \
+    ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
+    ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
+    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
+    yum clean all
+
+ADD runssh.sh /usr/sbin/runssh.sh
+RUN chmod +x /usr/sbin/runssh.sh
+
 # Install DB software binaries
 USER oracle
 RUN $INSTALL_DIR/$INSTALL_DB_BINARIES_FILE EE
