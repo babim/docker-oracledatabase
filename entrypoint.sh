@@ -3,6 +3,9 @@ set -e
 
 export ORACLE_PWD=${ORACLE_PWD:-oracle}
 
+# option
+if [ -f "/option.sh" ]; then /option.sh; fi
+
 # Prevent owner issues on mounted folders
 echo "Preparing oracle installer."
 chown -R oracle:dba /u01/app/oracle
