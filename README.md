@@ -1,17 +1,12 @@
 Oracle Database on Docker
 ===============
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1se.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se.ssh "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1se.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1se.ssh "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR1ee.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee.ssh "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR1ee.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR1ee.ssh "Get your own version badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2se.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2se.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se.ssh "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2se.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2se.ssh "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2ee.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:12cR2ee.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee.ssh "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:12cR2ee.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:12cR2ee.ssh "Get your own version badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.1.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.1.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1.ssh "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.1.ssh.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.1.ssh "Get your own version badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/image/babim/oracledatabase:11.2.0.3.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.3 "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/babim/oracledatabase:11.2.0.3.svg)](https://microbadger.com/images/babim/oracledatabase:11.2.0.3 "Get your own version badge on microbadger.com")
 
@@ -79,6 +74,46 @@ The Oracle Database inside the container also has Oracle Enterprise Manager Expr
 	https://localhost:5500/em/
 
 **NOTE**: Oracle Database bypasses file system level caching for some of the files by using the `O_DIRECT` flag. It is not advised to run the container on a file system that does not support the `O_DIRECT` flag.
+
+## Environment ssh, cron option
+```
+SSH=false
+SSHPASS=root (or you set)
+
+CRON=false
+NFS=false
+SYNOLOGY=false
+UPGRADE=false
+PAGESPEED=false
+MODSECURITY=false
+WWWUSER=www-data
+MYSQLUSER=mysql
+FULLOPTION=true
+```
+
+## NFS option
+Writing back to the host:
+```
+docker run -itd \
+    --privileged=true \
+    --net=host \
+    --name nfs-movies \
+    -v /media/nfs-movies:/mnt/nfs-1:shared \
+    -e SERVER=192.168.0.9 \
+    -e SHARE=movies \
+    babim/........
+```
+```
+default:
+FSTYPE nfs4
+MOUNT_OPTIONS nfsvers=4
+MOUNTPOINT /mnt/nfs-1
+---
+max FSTYPE, MOUNT_OPTIONS, MOUNTPOINT
+FSTYPE2
+FSTYPE3
+FSTYPE4
+```
 
 #### Changing the admin accounts passwords
 
