@@ -4,6 +4,10 @@ FROM oraclelinux:7-slim
 # ----------
 MAINTAINER babim <babim@matmagoc.com>
 
+# Download option
+RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
+    chmod 755 /option.sh && yum remove -y wget
+
 #ADD oracle-instantclient*.rpm /tmp/
 
 RUN  yum -y install wget && cd /tmp && \
@@ -17,5 +21,5 @@ RUN  yum -y install wget && cd /tmp && \
      ldconfig
 
 ENV PATH=$PATH:/usr/lib/oracle/12.2/client64/bin
-
+ENTRYPOINT ["/option.sh"]
 CMD ["sqlplus", "-v"]
