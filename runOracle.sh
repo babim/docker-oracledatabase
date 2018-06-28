@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# option
+if [ -f "/option.sh" ]; then /option.sh; fi
+
 ############# Execute custom scripts ##############
 function runUserScripts {
 
