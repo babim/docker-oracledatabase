@@ -6,11 +6,11 @@ MAINTAINER babim <babim@matmagoc.com>
 
 # Download option
 RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
-    chmod 755 /option.sh && yum remove -y wget
+    chmod 755 /option.sh
 
 #ADD oracle-instantclient*.rpm /tmp/
 
-RUN  yum -y install wget && cd /tmp && \
+RUN  cd /tmp && \
      wget http://media.matmagoc.com/oracle/oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm && \
      wget http://media.matmagoc.com/oracle/oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm && \
      wget http://media.matmagoc.com/oracle/oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm && \
