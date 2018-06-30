@@ -47,7 +47,9 @@ function moveFiles {
    su -p oracle -c "mv $ORACLE_HOME/network/admin/listener.ora $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/"
    su -p oracle -c "mv $ORACLE_HOME/network/admin/tnsnames.ora $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/"
    mv /etc/sysconfig/oracle-xe $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/
-      
+
+   cp /etc/oratab $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/
+
    symLinkFiles;
 }
 
@@ -73,6 +75,8 @@ function symLinkFiles {
    if [ ! -L /etc/sysconfig/oracle-xe ]; then
       ln -s $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/oracle-xe /etc/sysconfig/oracle-xe
    fi;
+
+   cp $ORACLE_BASE/oradata/dbconfig/$ORACLE_SID/oratab /etc/oratab
 }
 
 ########### SIGTERM handler ############
@@ -183,10 +187,10 @@ fi;
 /etc/init.d/oracle-xe start | grep -qc "Oracle Database 11g Express Edition is not configured"
 if [ "$?" == "0" ]; then
    # Check whether container has enough memory
-   if [ `df -k /dev/shm | tail -n 1 | awk '{print $2}'` -lt 1048576 ]; then
+   if [ `df -Pk /dev/shm | tail -n 1 | awk '{print $2}'` -lt 1048576 ]; then
       echo "Error: The container doesn't have enough memory allocated."
       echo "A database XE container needs at least 1 GB of shared memory (/dev/shm)."
-      echo "You currently only have $((`df -k /dev/shm | tail -n 1 | awk '{print $2}'`/1024)) MB allocated to the container."
+      echo "You currently only have $((`df -Pk /dev/shm | tail -n 1 | awk '{print $2}'`/1024)) MB allocated to the container."
       exit 1;
    fi;
    
@@ -197,12 +201,24 @@ if [ "$?" == "0" ]; then
    runUserScripts $ORACLE_BASE/scripts/setup
 fi;
 
+# Check whether database is up and running
+$ORACLE_BASE/$CHECK_DB_FILE
+if [ $? -eq 0 ]; then
 echo "#########################"
 echo "DATABASE IS READY TO USE!"
 echo "#########################"
 
 # Execute custom provided startup scripts
 runUserScripts $ORACLE_BASE/scripts/startup
+
+else
+  echo "#####################################"
+  echo "########### E R R O R ###############"
+  echo "DATABASE SETUP WAS NOT SUCCESSFUL!"
+  echo "Please check output for further info!"
+  echo "########### E R R O R ###############"
+  echo "#####################################"
+fi;
 
 echo "The following output is now a tail of the alert.log:"
 tail -f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log &
