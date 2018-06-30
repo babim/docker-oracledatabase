@@ -5,10 +5,10 @@ MAINTAINER babim <babim@matmagoc.com>
 
 # Download option
 RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
-    chmod 755 /option.sh && yum remove -y wget
+    chmod 755 /option.sh
 
 RUN groupadd dba && useradd -m -G dba oracle && mkdir /u01 && chown oracle:dba /u01
-RUN yum install -y yum install oracle-rdbms-server-11gR2-preinstall glibc-static wget unzip && yum clean all
+RUN yum install -y yum install oracle-rdbms-server-11gR2-preinstall glibc-static unzip && yum clean all
 
 #ADD p13390677_112040_Linux-x86-64_1of7.zip /
 #ADD p13390677_112040_Linux-x86-64_2of7.zip /
