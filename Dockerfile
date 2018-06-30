@@ -6,7 +6,7 @@ MAINTAINER babim <babim@matmagoc.com>
 
 # Download option
 RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
-    chmod 755 /option.sh && yum remove -y wget
+    chmod 755 /option.sh
 
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
@@ -36,7 +36,7 @@ ENV INSTALL_DIR=$ORACLE_BASE/install \
 COPY $INSTALL_RSP $SETUP_LINUX_FILE $CHECK_SPACE_FILE $INSTALL_DB_BINARIES_FILE $INSTALL_DIR/
 COPY $RUN_FILE $START_FILE $CREATE_DB_FILE $CONFIG_RSP $PWD_FILE $CHECK_DB_FILE $USER_SCRIPTS_FILE $ORACLE_BASE/
 
-RUN yum install wget -y && cd $INSTALL_DIR/ && \
+RUN cd $INSTALL_DIR/ && \
     wget http://media.matmagoc.com/oracle/$INSTALL_FILE_1 && \
     chmod ug+x $INSTALL_DIR/*.sh && \
     sync && \
