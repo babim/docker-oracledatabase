@@ -26,7 +26,7 @@ ENV PATH=$ORACLE_HOME/bin:$PATH
 # Install Oracle Express Edition
 # ------------------------------
 
-RUN mkdir $INSTALL_DIR/ && cd $INSTALL_DIR/ && \
+RUN mkdir -p $INSTALL_DIR/ && cd $INSTALL_DIR/ && \
     wget http://media.matmagoc.com/oracle/$INSTALL_FILE_1 && \
     yum -y install unzip libaio bc initscripts net-tools openssl && \
     yum clean all && \
