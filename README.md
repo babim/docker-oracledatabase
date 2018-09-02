@@ -24,8 +24,9 @@ To run your Oracle Database Docker image use the **docker run** command as follo
 	-e ORACLE_PDB=<your PDB name> \
 	-e ORACLE_PWD=<your database passwords> \
 	-e ORACLE_CHARACTERSET=<your character set> \
+	-e ORACLE_NCHARACTERSET=<your character set> \
 	-v [<host mount point>:]/opt/oracle/oradata \
-	oracle/database:12.2.0.1-ee
+	babim/oracledatabase:12cR2se
 	
 	Parameters:
 	   --name:        The name of the container (default: auto generated)
@@ -36,6 +37,8 @@ To run your Oracle Database Docker image use the **docker run** command as follo
 	   -e ORACLE_PWD: The Oracle Database SYS, SYSTEM and PDB_ADMIN password (default: auto generated)
 	   -e ORACLE_CHARACTERSET:
 	                  The character set to use when creating the database (default: AL32UTF8)
+	   -e ORACLE_NCHARACTERSET:
+	                  The character set to use when creating the database (default: UTF8)
 	   -v /opt/oracle/oradata
 	                  The data volume to use for the database.
 	                  Has to be owned by the Unix user "oracle" or set appropriately.
