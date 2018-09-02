@@ -1,7 +1,7 @@
 #!/bin/bash
 # LICENSE UPL 1.0
 #
-# Copyright (c) 1982-2017 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 1982-2018 Oracle and/or its affiliates. All rights reserved.
 #
 # Since: January, 2017
 # Author: gerald.venzl@oracle.com
@@ -10,7 +10,7 @@
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 # 
 
-REQUIRED_SPACE_GB=15
+REQUIRED_SPACE_GB=18
 AVAILABLE_SPACE_GB=`df -PB 1G / | tail -n 1 | awk '{ print $4 }'`
 
 if [ $AVAILABLE_SPACE_GB -lt $REQUIRED_SPACE_GB ]; then

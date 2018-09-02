@@ -11,8 +11,8 @@ RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
 ENV ORACLE_BASE=/opt/oracle \
-    ORACLE_HOME=/opt/oracle/product/12.2.0.1/dbhome_1 \
-    INSTALL_FILE_1="linuxx64_12201_database.zip" \
+    ORACLE_HOME=/opt/oracle/product/18c/dbhome_1 \
+    INSTALL_FILE_1="LINUX.X64_180000_db_home.zip" \
     INSTALL_RSP="db_inst.rsp" \
     CONFIG_RSP="dbca.rsp.tmpl" \
     PWD_FILE="setPassword.sh" \
@@ -45,7 +45,7 @@ RUN cd $INSTALL_DIR/ && \
 
 # Install DB software binaries
 USER oracle
-RUN $INSTALL_DIR/$INSTALL_DB_BINARIES_FILE SE2
+RUN $INSTALL_DIR/$INSTALL_DB_BINARIES_FILE EE
 
 USER root
 RUN $ORACLE_BASE/oraInventory/orainstRoot.sh && \

@@ -1,7 +1,7 @@
 #!/bin/bash
-# LICENSE CDDL 1.0 + GPL 2.0
+# LICENSE UPL 1.0
 #
-# Copyright (c) 1982-2016 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 1982-2018 Oracle and/or its affiliates. All rights reserved.
 # 
 # Since: November, 2016
 # Author: gerald.venzl@oracle.com
@@ -9,9 +9,6 @@
 # 
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 # 
-
-# option
-if [ -f "/option.sh" ]; then /option.sh; fi
 
 ########### Move DB files ############
 function moveFiles {
@@ -143,7 +140,6 @@ export ORACLE_PDB=${ORACLE_PDB:-ORCLPDB1}
 
 # Default for ORACLE CHARACTERSET
 export ORACLE_CHARACTERSET=${ORACLE_CHARACTERSET:-AL32UTF8}
-export ORACLE_NCHARACTERSET=${ORACLE_NCHARACTERSET:-UTF8}
 
 # Check whether database already exists
 if [ -d $ORACLE_BASE/oradata/$ORACLE_SID ]; then
