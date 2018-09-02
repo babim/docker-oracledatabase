@@ -65,3 +65,7 @@ HEALTHCHECK --interval=1m --start-period=5m \
     
 # Define default command to start Oracle Database. 
 CMD exec $ORACLE_BASE/$RUN_FILE
+
+# Environment variables default
+ENV ORACLE_CHARACTERSET AL32UTF8
+ENV ORACLE_NCHARACTERSET UTF8
