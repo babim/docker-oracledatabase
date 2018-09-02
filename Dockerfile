@@ -45,7 +45,7 @@ RUN cd $INSTALL_DIR/ && \
 
 # Install DB software binaries
 USER oracle
-RUN $INSTALL_DIR/$INSTALL_DB_BINARIES_FILE EE
+RUN $INSTALL_DIR/$INSTALL_DB_BINARIES_FILE SE2
 
 USER root
 RUN $ORACLE_BASE/oraInventory/orainstRoot.sh && \

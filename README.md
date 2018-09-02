@@ -26,7 +26,7 @@ To run your Oracle Database Docker image use the **docker run** command as follo
 	-e ORACLE_CHARACTERSET=<your character set> \
 	-e ORACLE_NCHARACTERSET=<your character set> \
 	-v [<host mount point>:]/opt/oracle/oradata \
-	babim/oracledatabase:18cee
+	babim/oracledatabase:18cse
 	
 	Parameters:
 	   --name:        The name of the container (default: auto generated)
