@@ -10,6 +10,9 @@
 # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 # 
 
+# option
+if [ -f "/option.sh" ]; then /option.sh; fi
+
 ########### Move DB files ############
 function moveFiles {
 
