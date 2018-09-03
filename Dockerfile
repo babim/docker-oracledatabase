@@ -23,6 +23,10 @@ ENV ORACLE_BASE=/u01/app/oracle \
 # Use second ENV so that variable get substituted
 ENV PATH=$ORACLE_HOME/bin:$PATH
 
+# Copy binaries
+# -------------
+COPY $CONFIG_RSP $RUN_FILE $PWD_FILE $CHECK_DB_FILE $INSTALL_DIR/
+
 # Install Oracle Express Edition
 # ------------------------------
 
