@@ -12,7 +12,13 @@ RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.
 # -------------------------------------------------------------
 ENV VERSION=18c \
     PRODUCT=EE \
-    INSTALL_FILE_1="LINUX.X64_180000_db_home.zip"
+    INSTALL_FILE_1="LINUX.X64_180000_db_home.zip" \
+    ORACLE_BASE=/opt/oracle \
+    ORACLE_HOME=$ORACLE_BASE/product/$VERSION/dbhome_1 \
+    INSTALL_DIR=$ORACLE_BASE/install \
+    PATH=$ORACLE_HOME/bin:$ORACLE_HOME/OPatch/:/usr/sbin:$PATH \
+    LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib \
+    CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 
 # install
 RUN curl -s https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20OracleDatabase%20install/oracledatabase_install.sh | bash
