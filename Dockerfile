@@ -28,7 +28,7 @@ ENV VERSION=18c \
 
 # Use second ENV so that variable get substituted
 ENV ORACLE_HOME $ORACLE_BASE/product/$VERSION/dbhome_1
-ENV INSTALL_DIR $ORACLE_BASE/install \
+ENV INSTALL_DIR $ORACLE_BASE/install
 ENV PATH=$ORACLE_HOME/bin:$ORACLE_HOME/OPatch/:/usr/sbin:$PATH \
     LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib \
     CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
