@@ -12,8 +12,8 @@ RUN yum install -y wget bash && cd / && wget --no-check-certificate https://raw.
 # -------------------------------------------------------------
 ENV VERSION=12.1.0.2 \
     PRODUCT=EE \
-    INSTALL_FILE_1="linuxamd64_12102_database_se2_1of2.zip" \
-    INSTALL_FILE_2="linuxamd64_12102_database_se2_2of2.zip" \
+    INSTALL_FILE_1="linuxamd64_12102_database_1of2.zip" \
+    INSTALL_FILE_2="linuxamd64_12102_database_2of2.zip" \
     ORACLE_BASE="/opt/oracle" \
     INSTALL_RSP="db_inst.rsp" \
     CONFIG_RSP="dbca.rsp.tmpl" \
