@@ -6,9 +6,9 @@ MAINTAINER babim <babim@matmagoc.com>
 
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
-ENV VERSION=18c \
+ENV VERSION=19c \
     PRODUCT=EE \
-    INSTALL_FILE_1="LINUX.X64_180000_db_home.zip" \
+    INSTALL_FILE_1="LINUX.X64_193000_db_home.zip" \
     ORACLE_BASE="/opt/oracle" \
     INSTALL_RSP="db_inst.rsp" \
     CONFIG_RSP="dbca.rsp.tmpl" \
@@ -20,7 +20,9 @@ ENV VERSION=18c \
     CHECK_SPACE_FILE="checkSpace.sh" \
     CHECK_DB_FILE="checkDBStatus.sh" \
     USER_SCRIPTS_FILE="runUserScripts.sh" \
-    INSTALL_DB_BINARIES_FILE="installDBBinaries.sh"
+    INSTALL_DB_BINARIES_FILE="installDBBinaries.sh" \
+    RELINK_BINARY_FILE="relinkOracleBinary.sh" \
+    SLIMMING=$SLIMMING
 
 # Use second ENV so that variable get substituted
 ENV ORACLE_HOME $ORACLE_BASE/product/$VERSION/dbhome_1
