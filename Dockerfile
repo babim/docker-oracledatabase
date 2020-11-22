@@ -7,7 +7,7 @@ MAINTAINER babim <babim@matmagoc.com>
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
 ENV VERSION=19c \
-    PRODUCT=EE \
+    PRODUCT=SE2 \
     INSTALL_FILE_1="LINUX.X64_193000_db_home.zip" \
     ORACLE_BASE="/opt/oracle" \
     INSTALL_RSP="db_inst.rsp" \
