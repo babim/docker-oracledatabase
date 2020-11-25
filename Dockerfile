@@ -13,9 +13,9 @@ RUN yum install -y yum install oracle-rdbms-server-11gR2-preinstall glibc-static
 #ADD p10404530_112030_Linux-x86-64_1of7.zip /
 #ADD p10404530_112030_Linux-x86-64_2of7.zip /
 RUN echo 'Downloading linux.x64_11gR2_database_1of2.zip' && \
-    wget -q -O /root/p10404530_112030_Linux-x86-64_1of7.zip http://media.matmagoc.com/oracle/p10404530_112030_Linux-x86-64_1of7.zip && \
+    wget --no-check-certificate -q -O /root/p10404530_112030_Linux-x86-64_1of7.zip http://file.matmagoc.com/oracle/p10404530_112030_Linux-x86-64_1of7.zip && \
     echo 'Downloading linux.x64_11gR2_database_2of2.zip' && \
-    wget -q -O /root/p10404530_112030_Linux-x86-64_2of7.zip http://media.matmagoc.com/oracle/p10404530_112030_Linux-x86-64_2of7.zip
+    wget --no-check-certificate -q -O /root/p10404530_112030_Linux-x86-64_2of7.zip http://file.matmagoc.com/oracle/p10404530_112030_Linux-x86-64_2of7.zip
 
 ADD install /install
 
